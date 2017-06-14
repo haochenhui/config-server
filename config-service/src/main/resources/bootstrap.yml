@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        monitor:
+          git:
+           enaled: true
+        git:
+           uri: git@192.168.244.130:rootGroup/madp.git
+           username: root
+           password: 5iveL!fe
+#           uri: http://yangbs3@10.96.92.54/madp/config-product.git
+#           username: yangbs3
+#           password: abcd-1234
+#           uri: https://github.com/BaoshuaiYang/ms_config.git
+#           username: leoyangbs@gmail.com
+#           password: x1002898
+           repos:
+             development:
+               pattern:
+                 - '*/develop'
+               uri: git@192.168.244.130:rootGroup/madp.git
+             staging:
+               pattern:
+                 - '*/stage'
+               uri: git@192.168.244.130:rootGroup/ms_stage.git
+             production:
+               pattern:
+                 - '*/product'
+               uri: git@192.168.244.130:rootGroup/ms_stage.git
